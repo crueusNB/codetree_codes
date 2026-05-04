@@ -13,7 +13,6 @@ bool check(int num){
         vec[i] = d[i];
     }
 
-    // 여기서 시간초과 날거같은데
     for (int i = num; i < N; i++){
         int minIdx = 0;
         for (int j = 1; j < num; j++){
@@ -29,6 +28,19 @@ bool check(int num){
         if (vec[i] > T_max){
             return false;
         }
+
+        
+    }
+
+    if (num == 5){
+        for (int i = 0; i < N; i++){
+            cout << d[i] << ' ';
+        }
+        cout << '\n';
+
+        for (int i = 0; i < 5; i++){
+            cout << vec[i] << ' ' << '\n';
+        }
     }
     return true;
 }
@@ -39,9 +51,6 @@ int main() {
     for (int i = 0; i < N; i++) {
         cin >> d[i];
     }
-
-    sort(d, d + N);
-    reverse(d, d + N);
 
     // Please write your code here.
     int left = 1;

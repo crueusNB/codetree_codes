@@ -63,7 +63,7 @@ bool check(int target){
                 int cnt = bfs(target);
                 // 디버깅 부분
                 //cout << "now Target : " << target << " cnt : " << cnt << '\n';
-                if (cnt > (n * n + 1) / 2){
+                if (cnt >= (n * n + 1) / 2){
                     return true;
                 }
             }

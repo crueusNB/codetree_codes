@@ -62,7 +62,7 @@ int main() {
 
     // Please write your code here.
     // mid 는 높이차
-    int left = 1;
+    int left = 0;
     int right = 500;
     int ans;
     while (left <= right){

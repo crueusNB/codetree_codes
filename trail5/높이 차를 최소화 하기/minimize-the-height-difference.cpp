@@ -79,14 +79,14 @@ int main() {
     int ans;
     while (left <= right){
         int mid = (left + right) / 2;
-        cout << "target : " << mid;
+        //cout << "target : " << mid;
         if (check(mid)){
-            cout << " true" << '\n';
+        //    cout << " true" << '\n';
             right = mid - 1;
             ans = mid;
         }
         else{
-            cout << " false" << '\n';
+         //   cout << " false" << '\n';
             left = mid + 1;
         }
     }

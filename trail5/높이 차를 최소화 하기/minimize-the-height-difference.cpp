@@ -9,6 +9,7 @@ using namespace std;
 // 
 int n, m;
 int board[100][100];
+int min_v = 500;
 bool visited[100][100];
 
 int dx[4] = {-1, 1, 0, 0};
@@ -33,8 +34,10 @@ bool canGo(int x, int y){
 // 인자로 좌표랑 최대 최소가 들어가야하겠죠? 그리고 target범위까지
 // 이걸 bool 리턴하게 할까요
 bool dfs(int x, int y, int maxNum, int minNum, int target){
-    if (x == n - 1 && y == m - 1)
+    if (x == n - 1 && y == m - 1){
+        min_v = maxNum - minNum;
         return true;
+    }
         
     maxNum = max(maxNum, board[x][y]);
     minNum = min(minNum, board[x][y]);
@@ -59,7 +62,7 @@ bool dfs(int x, int y, int maxNum, int minNum, int target){
 bool check(int target){
     Initialize();
 
-
+    
     return dfs(0, 0, board[0][0], board[0][0], target);
 }
 
@@ -84,6 +87,11 @@ int main() {
         //    cout << " true" << '\n';
             right = mid - 1;
             ans = mid;
+
+            if (min_v < mid){
+                ans = min_v;
+                right = ans - 1;
+            }
         }
         else{
          //   cout << " false" << '\n';

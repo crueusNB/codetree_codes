@@ -11,8 +11,8 @@ int main() {
         cin >> arr[i];
     }
 
-    int sum = -99999;
-    int maxSum = 0;
+    int sum = 0;
+    int maxSum = -1000000;
     for (int i = 0; i < n; i++){
         sum += arr[i];
         maxSum = max(sum, maxSum);

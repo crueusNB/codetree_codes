@@ -11,7 +11,7 @@ bool compare(string a, string b){
     string tmp1 = a + b;
     string tmp2 = b + a;
 
-    if (stoi(tmp1) > stoi(tmp2))
+    if (stod(tmp1) > stod(tmp2))
         return true;
     return false;
 }

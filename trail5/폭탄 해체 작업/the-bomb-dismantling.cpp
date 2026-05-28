@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <queue>
 using namespace std;
 
 int n;
@@ -17,19 +18,30 @@ int main() {
 
     sort(vec.begin(), vec.end());
 
-    int firstT = vec[0].first;
-    int sum = vec[0].second;
+    int sum = 0;
+    int time = 0;
+    priority_queue<int, vector<int>, greater<int>> scores;
 
-    for (int i = 1; i < n; i++){
-        if (firstT == vec[i].first){
-            sum -= vec[i - 1].second;
+    for (int i = 0; i < n; i++){
+        if (vec[i].first > time){
+            scores.push(vec[i].second);
+            time++;
         }
-        sum += vec[i].second;
-        firstT = vec[i].first;
+        else{
+            if (!scores.empty() && scores.top() < vec[i].second){
+                scores.pop();
+                scores.push(vec[i].second);
+            }
+        }
     }
 
+    while (!scores.empty()){
+        sum += scores.top();
+        scores.pop();
+    }
 
     cout << sum;
+
 
     return 0;
 }

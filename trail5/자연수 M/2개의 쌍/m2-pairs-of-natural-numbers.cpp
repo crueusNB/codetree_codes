@@ -17,9 +17,7 @@ int main() {
         int cnt;
         int num;
         cin >> cnt >> num;
-        for (int j = 0; j < cnt ; j++){
-            vec.push_back({num, cnt});
-        }
+        vec.push_back({num, cnt});
     }
     sort(vec.begin(), vec.end());
 

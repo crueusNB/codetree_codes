@@ -25,7 +25,7 @@ int main() {
     int cnt = 0;
     for (int i = 1; i < n; i++){
         if (vec[i].first >= end_time){
-            end_time = vec[i].first;
+            end_time = vec[i].second;
         }
         else{
             cnt++;

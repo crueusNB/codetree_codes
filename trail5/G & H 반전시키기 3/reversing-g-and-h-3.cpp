@@ -14,8 +14,8 @@ int main() {
         if (str1[i] != str2[i]){
             cnt++;
             for (int j = 0; j < 4; j++){
-                if (str1[j] != str2[j]){
-                    str1[j] = str2[j];
+                if (str1[i + j] != str2[i + j]){
+                    str1[i + j] = str2[i + j];
                 }
                 else{
                     break;

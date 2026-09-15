@@ -22,7 +22,7 @@ int main() {
         edges[j[k]].push_back({i[k], d[k]});
     }
 
-    for (int i = 0; i < N; i++){
+    for (int i = 1; i < N; i++){
         dist[i] = INF;
     }
 
@@ -47,8 +47,6 @@ int main() {
                 pq.push({-new_dist, target_index});
             }
         }
-
-
     }
 
 

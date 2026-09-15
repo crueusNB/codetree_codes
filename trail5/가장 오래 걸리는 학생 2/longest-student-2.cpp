@@ -11,7 +11,7 @@ int N, M;
 int i[100000], j[100000], d[100000];
 const int INF = 2000000000;
 priority_queue<pair<int, int>> pq;
-vector<pair<int, int>> edges[100001];
+vector<pair<int, int>> edges[200001];
 int dist[100001];
 
 int main() {

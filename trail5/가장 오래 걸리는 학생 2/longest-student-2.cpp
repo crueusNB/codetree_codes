@@ -53,7 +53,7 @@ int main() {
 
     // print
     int ans = 0;
-    for (int i = 1; i <= N - 1; i++){
+    for (int i = 1; i < N; i++){
         ans = max(ans, dist[i]);
     }
     cout << ans << '\n';

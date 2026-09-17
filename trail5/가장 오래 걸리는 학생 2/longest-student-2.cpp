@@ -11,15 +11,14 @@ int N, M;
 int i[100000], j[100000], d[100000];
 const int INF = 1000000000;
 priority_queue<pair<int, int>> pq;
-vector<pair<int, int>> edges[200001];
+vector<pair<int, int>> edges[100001];
 int dist[100001];
 
 int main() {
     cin >> N >> M;
     for (int k = 0; k < M; k++) {
         cin >> i[k] >> j[k] >> d[k];
-        edges[i[k]].push_back({j[k],d[k]});
-        edges[j[k]].push_back({i[k], d[k]});
+        edges[j[k]].push_back({i[k],d[k]});
     }
 
     for (int i = 1; i < N; i++){
